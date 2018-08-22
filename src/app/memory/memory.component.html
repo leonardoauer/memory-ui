@@ -1,0 +1,74 @@
+<div class="row page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center ">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">### This blank space is left for use in future ###</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="container" *ngIf="memory">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <span class=" float-right">
+            <a href="mail-compose.html" class="btn btn-info btn-sm">
+              <em class="fa fa-edit"></em> Edit
+            </a>
+          </span>          
+          <h3 class="text-capitalize font-300">{{memory.title}}</h3>
+          <hr class="clearfix">
+          <div class="media margin-b-20">
+
+            <a class="float-left" href="#"><img class="media-object rounded-circle" src="assets/img/avtar-2.png" width="40"
+                alt=""> </a>
+            <div class="media-body margin-l-10">
+              <h4 class="text-danger font-300 margin-b-0">John Doe</h4>
+              <small class="text-muted"> demo@domain.com <strong>To Me</strong> 13:30 - 23 September 2018</small>
+            </div>
+          </div>
+
+          <p>{{memory.content.text}}</p>
+          <hr>
+          <div class="inbox-attachments margin-b-20">
+            <span><i class="fa fa-paperclip margin-r-10 "></i> Attachments (3)</span>
+          </div>
+          <div class="clearfix row">
+            <div class="col-sm-2">
+              <div class="attachment-box">
+                <img src="assets/img/gallery/1s.jpg" alt="" class="img-fluid rounded">
+                <div class="attachment-overlay">
+                  <a href="#"><i class="fa fa-download"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="attachment-box">
+                <img src="assets/img/gallery/2s.jpg" alt="" class="img-fluid rounded">
+                <div class="attachment-overlay">
+                  <a href="#"><i class="fa fa-download"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="attachment-box">
+                <img src="assets/img/gallery/3s.jpg" alt="" class="img-fluid rounded">
+                <div class="attachment-overlay">
+                  <a href="#"><i class="fa fa-download"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Copyright &copy; 2018 FixedPlus</span>
+  </footer>
+
+</section>

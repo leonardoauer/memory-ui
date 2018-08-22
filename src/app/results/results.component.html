@@ -1,0 +1,54 @@
+<div class="row page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center ">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">### This blank space is left for use in future ###</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="container">
+  <div class="row">
+    <div *ngFor="let memory of memories" class="col-md-4 col-sm-6">
+      <div class="card" 
+          (click)="onSelect(memory)" 
+          (mouseover)="memory.isSelected = true" 
+          (mouseout)="memory.isSelected = false" 
+          [style.background-color]="memory.isSelected ? '#e6e6e65c' : '#ffffff'">
+
+        <div class="card-body">
+          <p class="badge badge-default">{{memory.tag}}</p>
+          <p class="lead margin-b-0">{{memory.title}}</p>
+          <p class="text-muted"></p>
+          <p class="text-muted">{{memory.content.text}}</p>
+          <button class="btn btn-primary"><i class="demo-pli-male icon-fw"></i>Read more...</button>
+          <hr>
+          <ul class="list-unstyled margin-b-0 text-center row">
+            <li class="col-4">
+              <span class="font-600">1,345</span>
+              <p class="text-muted text-sm margin-b-0">Following</p>
+            </li>
+            <li class="col-4">
+              <span class="font-600">23K</span>
+              <p class="text-muted text-sm margin-b-0">Followers</p>
+            </li>
+            <li class="col-4">
+              <span class="font-600">278</span>
+              <p class="text-muted text-sm margin-b-0">Post</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Copyright &copy; 2018 FixedPlus</span>
+  </footer>
+
+</section>
+
+
