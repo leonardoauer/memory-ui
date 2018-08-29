@@ -1,10 +1,12 @@
 <div class="row page-header">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 align-self-center ">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">### This blank space is left for use in future ###</li>
-        </ol>
+      <div class="col-lg-12 align-self-center ">
+        <span class=" float-right">
+          <a routerLink="/memory/add" class="btn btn-warning">
+            Add Memory
+          </a>
+        </span>
       </div>
     </div>
   </div>
@@ -13,17 +15,14 @@
 <section class="container">
   <div class="row">
     <div *ngFor="let memory of memories" class="col-md-4 col-sm-6">
-      <div class="card" 
-          (click)="onSelect(memory)" 
-          (mouseover)="memory.isSelected = true" 
-          (mouseout)="memory.isSelected = false" 
-          [style.background-color]="memory.isSelected ? '#e6e6e65c' : '#ffffff'">
+      <div class="card" (click)="onSelect(memory)" (mouseover)="memory.isSelected = true" (mouseout)="memory.isSelected = false"
+        [style.background-color]="memory.isSelected ? '#e6e6e65c' : '#ffffff'">
 
         <div class="card-body">
-          <p class="badge badge-default">{{memory.tag}}</p>
+          <p  *ngFor="let tag of memory.tags" class="badge badge-default tag">{{tag.name}}</p>
           <p class="lead margin-b-0">{{memory.title}}</p>
           <p class="text-muted"></p>
-          <p class="text-muted">{{memory.content.text}}</p>
+          <p class="text-muted" style="margin-left: 20px;" [innerHTML]="memory.content.text"></p>
           <button class="btn btn-primary"><i class="demo-pli-male icon-fw"></i>Read more...</button>
           <hr>
           <ul class="list-unstyled margin-b-0 text-center row">
@@ -50,5 +49,3 @@
   </footer>
 
 </section>
-
-

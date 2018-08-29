@@ -10,6 +10,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ResultsComponent } from './results/results.component';
 import { MemoryComponent } from './memory/memory.component';
 import { FooterComponent } from './footer/footer.component';
+import { MemoryEditionComponent } from './memory-edition/memory-edition.component';
+import { MemoryCreateComponent } from './memory-create/memory-create.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FooterComponent } from './footer/footer.component';
     MenuComponent,
     ResultsComponent,
     MemoryComponent,
-    FooterComponent
+    FooterComponent,
+    MemoryEditionComponent,
+    MemoryCreateComponent
   ],
   imports: [
     BrowserModule,

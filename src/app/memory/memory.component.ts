@@ -1,7 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-
 import { Memory } from '../app.model/memory';
 import { MemoryService } from '../app.service/memory.service';
 
@@ -22,12 +21,13 @@ export class MemoryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('we are at Memory Component');
     this.getMemory();
   }
 
   getMemory() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.memoryService.getMemory(this.id).subscribe(memory => this.memory = memory);
+    this.memoryService.getMemory(this.id).subscribe( memory => this.memory = memory );
   }
 
 }

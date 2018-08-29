@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
-    $("#respMenu").aceResponsiveMenu({
+    $('#respMenu').aceResponsiveMenu({
       resizeWidth: '768',
       animationSpeed: 'fast',
       accoridonExpAll: false

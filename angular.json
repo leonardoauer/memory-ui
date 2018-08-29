@@ -34,7 +34,11 @@
               "src/assets/lib/jasny-bootstrap/js/jasny-bootstrap.min.js",
               "src/assets/lib/slimscroll/jquery.slimscroll.min.js",
               "src/assets/lib/nano-scroll/jquery.nanoscroller.min.js",
-              "src/assets/lib/metisMenu/metisMenu.min.js"
+              "src/assets/lib/metisMenu/metisMenu.min.js",
+              "src/assets/lib/wysihtml5/wysihtml5-0.3.0.js",
+              "src/assets/lib/wysihtml5/bootstrap-wysihtml5.js",
+              "src/assets/lib/jquery-tageditor/jquery.tag-editor.min.js",
+              "src/assets/lib/jquery-tageditor/jquery.caret.min.js"
             ]
           },
           "configurations": {

@@ -1,8 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Memory } from '../app.model/memory';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({providedIn: 'root'})
 export class MemoryService {
@@ -25,8 +29,22 @@ export class MemoryService {
     return this.http.get<Memory>(`${this.memoriesUrl}/${id}`)
       .pipe(
         tap(_ => console.log(`fetched memory id=${id}`)),
-        catchError(this.handleError<Memory>(`getHero id=${id}`))
+        catchError(this.handleError<Memory>(`getMemory id=${id}`))
       );
+  }
+
+  updateMemory(memory: Memory): Observable<any> {
+    return this.http.put(this.memoriesUrl, memory, httpOptions).pipe(
+      tap(_ => console.log(`updated memory id=${memory.id}`)),
+      catchError(this.handleError<any>('updateMemory'))
+    );
+  }
+
+  addMemory(memory: Memory): Observable<any> {
+    return this.http.post(this.memoriesUrl, memory, httpOptions).pipe(
+      tap(_ => console.log(`adding new memory`)),
+      catchError(this.handleError<any>('addMemory'))
+    );
   }
 
 /**

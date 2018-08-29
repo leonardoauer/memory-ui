@@ -23,6 +23,6 @@ export class ResultsComponent implements OnInit {
   }
 
   onSelect(memory: Memory) {
-    this.router.navigateByUrl('memory/' + memory.id);
+    this.router.navigateByUrl('memory/view/' + memory.id);
   }
 }

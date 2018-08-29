@@ -1,0 +1,58 @@
+<div class="row page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center ">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">### This blank space is left for use in future ###</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="container" *ngIf="memory">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body mail-compose">
+          <h3 class="text-capitalize font-300">Edit your memory</h3>
+          <hr class="clearfix">
+          <form class="form-horizontal" method="get">
+            <div class="form-group">
+              <label>Title:</label>
+              <input type="text" class="form-control" name="title" [(ngModel)]="memory.title">
+            </div>
+            <div class="form-group">
+              <label>Attachments:</label>
+
+              <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                <div class="form-control" data-trigger="fileinput"><span class="fileinput-filename"></span></div>
+                <span class="input-group-addon btn btn-primary btn-file ">
+                  <span class="fileinput-new">Select</span>
+                  <span class="fileinput-exists">Change</span>
+                  <input type="file" name="image">
+                </span>
+                <a href="#" class="input-group-addon btn btn-danger  hover fileinput-exists" data-dismiss="fileinput">Remove</a>
+              </div>
+
+            </div>
+          </form>
+          <textarea class="form-control" id="textarea" rows="10" style="height:300px;">{{memory.content.text}}</textarea>
+          <div class="mail-body text-right tooltip-demo">
+            <a routerLink="/memory/view/{{memory.id}}" class="btn btn-dark btn-sm" data-toggle="tooltip" data-placement="top" title="Cancel"><i
+                class="fa fa-times"></i> Cancel</a>
+            <a (click)="updateMemory()" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Save" style="margin-left: 3px;"><i
+                class="fa fa-save"></i> Save</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <span>Copyright &copy; 2018 FixedPlus</span>
+  </footer>
+
+
+</section>
